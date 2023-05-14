@@ -1,4 +1,4 @@
-﻿altgraph==0.17.2
+altgraph==0.17.2
 asgiref==3.6.0
 asttokens==2.2.1
 awsebcli==3.20.5
@@ -51,7 +51,7 @@ psycopg2-binary==2.9.5
 pure-eval==0.2.2
 py4j==0.10.9.5
 Pygments==2.13.0
-pyinstaller==4.10
+pyinstaller==4.1
 pyinstaller-hooks-contrib==2022.2
 pypiwin32==223
 python-dateutil==2.8.2
