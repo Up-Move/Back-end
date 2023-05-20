@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+<<<<<<< HEAD
     'rest_framework_swagger',
     'drf_spectacular',
     'corsheaders',
@@ -65,6 +66,37 @@ CORS_ORIGIN_ALLOW_ALL = True
 #SECURE_HSTS_SECONDS             = None
 #SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 #SECURE_FRAME_DENY               = False
+
+#CORS_ALLOW_ALL_ORIGINS: True
+CORS_ORIGIN_ALLOW_ALL = True
+#CORS_REPLACE_HTTPS_REFERER      = False
+#HOST_SCHEME                     = "http://"
+#SECURE_PROXY_SSL_HEADER         = None
+#SECURE_SSL_REDIRECT             = False
+#SESSION_COOKIE_SECURE           = False
+#CSRF_COOKIE_SECURE              = False
+#SECURE_HSTS_SECONDS             = None
+#SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+#SECURE_FRAME_DENY               = False
+=======
+    'corsheaders',
+    'sslserver',
+]
+>>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
+
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['0.0.0.0,18.205.155.235']
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+       # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 #CORS_ALLOW_ALL_ORIGINS: True
 CORS_ORIGIN_ALLOW_ALL = True
@@ -119,7 +151,11 @@ WSGI_APPLICATION = 'API.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql',
+=======
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+>>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
         'NAME': 'Grupo1_PostgreSQL_DB',
         'USER': 'Grupo1',
         'PASSWORD': 'IFSP2023!',
@@ -169,3 +205,17 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
+=======
+CSRF_COOKIE_SECURE = False
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://0.0.0.0',
+    'http://18.205.155.235',
+    'http://localhost',
+    'https://intranet.srv.xxx.eu',
+    'https://intranet-staging.srv.xxx.eu',
+]
+
+CORS_REPLACE_HTTPS_REFERER = True
+>>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
