@@ -1,6 +1,6 @@
 from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
-
+from geo.views import VagasAPIView
 
 """API URL Configuration
 
@@ -19,17 +19,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_framework.schemas import get_schema_view
-from django.views.generic import TemplateView
-
+from .swagger import urlpatterns as swagger_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('dj_rest_auth.urls')),
     path('auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('api_schema', get_schema_view(title='Vaga Inclusiva API', description='API para a Aplicação Vaga Inclusiva'), name='api_schema'),
-    path('docs/', TemplateView.as_view(
-        template_name='docs.html',
-        extra_context={'schema_url':'api_schema'}
-        ), name='swagger-ui'),
+    path('vagas/', VagasAPIView.as_view()),
+    path('', include(swagger_urls)),
 ]

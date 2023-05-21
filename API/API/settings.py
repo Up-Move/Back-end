@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+
+GDAL_LIBRARY_PATH = 'C:/Users/4fun/AppData/Local/Programs/Python/Python311/Lib/site-packages/osgeo/gdal304.dll'
+GEOS_LIBRARY_PATH = 'C:/Users/4fun/AppData/Local/Programs/Python/Python311/Lib/site-packages/osgeo/geos_c.dll'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,41 +50,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
-<<<<<<< HEAD
-    'rest_framework_swagger',
-    'drf_spectacular',
-    'corsheaders',
-    'sslserver'
-    ]
-
-#CORS_ALLOW_ALL_ORIGINS: True
-CORS_ORIGIN_ALLOW_ALL = True
-#CORS_REPLACE_HTTPS_REFERER      = False
-#HOST_SCHEME                     = "http://"
-#SECURE_PROXY_SSL_HEADER         = None
-#SECURE_SSL_REDIRECT             = False
-#SESSION_COOKIE_SECURE           = False
-#CSRF_COOKIE_SECURE              = False
-#SECURE_HSTS_SECONDS             = None
-#SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
-#SECURE_FRAME_DENY               = False
-
-#CORS_ALLOW_ALL_ORIGINS: True
-CORS_ORIGIN_ALLOW_ALL = True
-#CORS_REPLACE_HTTPS_REFERER      = False
-#HOST_SCHEME                     = "http://"
-#SECURE_PROXY_SSL_HEADER         = None
-#SECURE_SSL_REDIRECT             = False
-#SESSION_COOKIE_SECURE           = False
-#CSRF_COOKIE_SECURE              = False
-#SECURE_HSTS_SECONDS             = None
-#SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
-#SECURE_FRAME_DENY               = False
-=======
     'corsheaders',
     'sslserver',
+    'geo',
+    'drf_yasg',
 ]
->>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
 
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = ['0.0.0.0,18.205.155.235']
@@ -130,7 +102,7 @@ ROOT_URLCONF = 'API.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,11 +123,7 @@ WSGI_APPLICATION = 'API.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
-        'ENGINE': 'django.db.backends.postgresql',
-=======
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
->>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'Grupo1_PostgreSQL_DB',
         'USER': 'Grupo1',
         'PASSWORD': 'IFSP2023!',
@@ -163,6 +131,8 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -205,8 +175,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
-=======
 CSRF_COOKIE_SECURE = False
 
 CSRF_TRUSTED_ORIGINS = [
@@ -218,4 +186,3 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_REPLACE_HTTPS_REFERER = True
->>>>>>> dd62d532884d3c30a8acf2060784241b3cb67b9f
