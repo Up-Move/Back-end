@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
-    'sslserver',
     'geo',
     'drf_yasg',
 ]
