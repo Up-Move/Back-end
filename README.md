@@ -2,8 +2,8 @@
 4º Versão do Projeto
 
 ## Novas Features Adicionadas:
-- Rota para Deletar Conta na Tela de Perfil
-- Rota para Atualizar E-mail na Tela de Perfil
+- Ajustes nas Funcionalidades
+- Bug Fixes
 
 ## Features Atuais:
 - Sistema de Recuperação de Senha por Email e Token
@@ -13,3 +13,5 @@
 - Implementação de Login com Email em vez de Username
 - Controle de Sessão (Sem Ajustes)
 - Security Headers
+- Rota para Deletar Conta na Tela de Perfil
+- Rota para Atualizar E-mail na Tela de Perfil
